@@ -40,6 +40,8 @@ service.registerTool(
 
 In this example, the schema is derived from a Swift struct decorated with `@Schemable`. When the model calls `get_delivery_date`, the `orderID` is extracted and validated automatically.
 
+See the [full code here](Sources/SwiftFunctionToolsExperiment.swift).
+
 ## Run locally
 
 To run the Swift executable locally, follow these steps:
