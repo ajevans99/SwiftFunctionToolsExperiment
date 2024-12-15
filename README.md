@@ -42,6 +42,25 @@ In this example, the schema is derived from a Swift struct decorated with `@Sche
 
 See the [full code here](Sources/SwiftFunctionToolsExperiment.swift).
 
+## Example Output
+
+```bash
+➜  SwiftFunctionToolsExperiment git:(main) swift run SwiftFunctionToolsExperiment "How much does shipping cost for express, 6.2 kg, and priority? What is the weather in Paris? And do you know that status of order 65445436"
+Building for debugging...
+[19/19] Applying SwiftFunctionToolsExperiment
+Build of product 'SwiftFunctionToolsExperiment' complete! (5.92s)
+Hello from calculateShippingCost
+Mocking call for ShippingEstimateRequest(weight: 6.2, priority: true, deliveryType: SwiftFunctionToolsExperiment.DeliveryType.express, extras: nil)
+Hello from weather
+Mocking call for Paris
+Hello from deliveryDate
+Mocking call for 65445436
+Final result: Here's the information you requested:
+- **Shipping Cost** for express delivery, 6.2 kg package, and priority: **$20**
+- **Weather in Paris**: It's currently **32°C**
+- **Status of Order 65445436**: Scheduled delivery is on **15th January 2021**.
+```
+
 ## Run locally
 
 To run the Swift executable locally, follow these steps:
