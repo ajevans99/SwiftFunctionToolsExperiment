@@ -1,0 +1,22 @@
+{
+  "configurations": [
+    {
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:SwiftFunctionToolsExperiment}",
+      "name": "Debug SwiftFunctionToolsExperiment",
+      "program": "${workspaceFolder:SwiftFunctionToolsExperiment}/.build/debug/SwiftFunctionToolsExperiment",
+      "preLaunchTask": "swift: Build Debug SwiftFunctionToolsExperiment"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:SwiftFunctionToolsExperiment}",
+      "name": "Release SwiftFunctionToolsExperiment",
+      "program": "${workspaceFolder:SwiftFunctionToolsExperiment}/.build/release/SwiftFunctionToolsExperiment",
+      "preLaunchTask": "swift: Build Release SwiftFunctionToolsExperiment"
+    }
+  ]
+}

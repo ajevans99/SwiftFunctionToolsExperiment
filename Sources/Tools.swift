@@ -23,7 +23,7 @@ enum ToolError: Error {
 }
 
 struct AnyTool<Output>: ToolProtocol {
-  let _schemaDefinition: () -> [String: ChatQuery.JSONValue]
+  let _schemaDefinition: [String: ChatQuery.JSONValue]
   let _callTool: (String) async throws -> String
 
   let name: String
@@ -37,9 +37,7 @@ struct AnyTool<Output>: ToolProtocol {
   ) where T.Output == Output {
     self.name = name
     self.description = description
-    self._schemaDefinition = {
-      schema.schemaValue.mapValues(ChatQuery.JSONValue.init)
-    }
+    self._schemaDefinition = schema.schemaValue.mapValues(ChatQuery.JSONValue.init)
     self._callTool = { arguments in
       let parsed = try schema.parse(instance: arguments)
       switch parsed {
@@ -52,7 +50,7 @@ struct AnyTool<Output>: ToolProtocol {
   }
 
   func schemaDefinition() -> [String: ChatQuery.JSONValue] {
-    _schemaDefinition()
+    _schemaDefinition
   }
 
   func callTool(with arguments: String) async throws -> String {
